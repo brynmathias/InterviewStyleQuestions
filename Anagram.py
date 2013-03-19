@@ -27,6 +27,8 @@ def anagram(word1 = str, word2 =str):
 	if letter not in chrArray1: return False
     return True
     #not yet complete as we don't check the number of each chr used.
+    
+# Grabed from the websomewhere
 listOfWords = [("mother in law","woman hitler"),("john mayer", "enjoy harm"),("president barack hussein obama a maniac presides", "the banks rob u"),("dog","cat"),(98574,75894)]
 
 
