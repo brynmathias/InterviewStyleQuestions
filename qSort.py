@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import numpy as np
+
 
 def partition(toSort = [], idx_1 = None, idx_2 = None):
     x = toSort[idx_2]
@@ -22,10 +24,26 @@ def Quick_sort(toSort, idx_1, idx_2):
         Quick_sort(toSort,idx_1, q-1)
         Quick_sort(toSort,q+1, idx_2)
         
+        
+        
+def ran_partition(toSort = [], idx_1 = None, idx_2 = None):
+    i = int(np.random.uniform(low = idx_1,high = idx_2,size = 1))
+    tmp = toSort[idx_2]
+    toSort[idx_2] = toSort[i]
+    toSort[i] = tmp
+    return( partition(toSort,idx_1,  idx_2))
+    
+def ran_Qsort(toSort, idx_1, idx_2):
+    if(idx_1 < idx_2):
+        q = ran_partition(toSort,idx_1,  idx_2)
+        ran_Qsort(toSort,idx_1, q-1)
+        ran_Qsort(toSort,q+1, idx_2)
+
+        
 def main():
-    numbers = [1,7,11,3,4,5,2,6,2,8,19,23,47,89]
+    numbers = np.random.random_integers(low = 0, high = 1000, size = 20 )	
     print numbers
-    Quick_sort(numbers,0,len(numbers)-1)
+    ran_Qsort(numbers,0,len(numbers)-1)
     print numbers
     
 if __name__ == '__main__':
