@@ -1,5 +1,9 @@
 #! /usr/bin/env python
 
+
+
+# The other way of doing this is to sort the two words and compare.
+
 def makeChrDict(word):
     if not isinstance(word,str): word = str(word)
     d = {}
