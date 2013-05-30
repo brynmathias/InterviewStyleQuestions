@@ -27,6 +27,7 @@ def Quick_sort(toSort, idx_1, idx_2):
         
         
 def ran_partition(toSort = [], idx_1 = None, idx_2 = None):
+    # Choose a random pivot point
     i = int(np.random.uniform(low = idx_1,high = idx_2,size = 1))
     tmp = toSort[idx_2]
     toSort[idx_2] = toSort[i]
