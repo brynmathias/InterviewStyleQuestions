@@ -9,16 +9,18 @@ class stack(object):
         
     def stack_empty(self):
         """docstring for stack_empty"""
-        if self.top is 0:
+        if self.top < 0:
             return True
         else:
             return False
             
     def push(self, value):
         """docstring for push"""
+        if(self.top+1 == len(self.array)):
+            self.array.append(value)
+        else:
+            self.array[self.top]=value
         self.top+=1
-        self.array.append(value)
-    
     
     def pop(self):
         """docstring for pop"""
@@ -35,7 +37,10 @@ def main():
     my_stack = stack()
     for v in values:
         my_stack.push(v)
-    print my_stack.array
+    while(my_stack.stack_empty() is False):
+        print my_stack.pop()
+    for v in reversed(values):
+        my_stack.push(v)    
     while(my_stack.stack_empty() is False):
         print my_stack.pop()
         
